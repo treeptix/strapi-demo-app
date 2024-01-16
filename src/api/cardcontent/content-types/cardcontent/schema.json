@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "cardcontents",
+  "info": {
+    "singularName": "cardcontent",
+    "pluralName": "cardcontents",
+    "displayName": "cardcontent"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "title": {
+      "type": "text"
+    },
+    "about": {
+      "type": "text"
+    },
+    "price": {
+      "type": "string"
+    }
+  }
+}

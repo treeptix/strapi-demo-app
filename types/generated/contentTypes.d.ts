@@ -367,7 +367,8 @@ export interface ApiCardCard extends Schema.CollectionType {
   info: {
     singularName: 'card';
     pluralName: 'cards';
-    displayName: 'card';
+    displayName: 'cardnft';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -388,30 +389,32 @@ export interface ApiCardCard extends Schema.CollectionType {
   };
 }
 
-export interface ApiProductProduct extends Schema.CollectionType {
-  collectionName: 'products';
+export interface ApiCardcontentCardcontent extends Schema.CollectionType {
+  collectionName: 'cardcontents';
   info: {
-    singularName: 'product';
-    pluralName: 'products';
-    displayName: 'Product';
+    singularName: 'cardcontent';
+    pluralName: 'cardcontents';
+    displayName: 'cardcontent';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    name: Attribute.String;
     image: Attribute.Media;
+    title: Attribute.Text;
+    about: Attribute.Text;
+    price: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
-      'api::product.product',
+      'api::cardcontent.cardcontent',
       'oneToOne',
       'admin::user'
     > &
       Attribute.Private;
     updatedBy: Attribute.Relation<
-      'api::product.product',
+      'api::cardcontent.cardcontent',
       'oneToOne',
       'admin::user'
     > &
@@ -836,7 +839,7 @@ declare module '@strapi/types' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'api::card.card': ApiCardCard;
-      'api::product.product': ApiProductProduct;
+      'api::cardcontent.cardcontent': ApiCardcontentCardcontent;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::content-releases.release': PluginContentReleasesRelease;
